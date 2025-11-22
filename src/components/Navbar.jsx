@@ -12,7 +12,8 @@ function Navbar() {
   return (
    <>
    <div className="navbar  shadow-md bg-black/40 backdrop-blur-md text-white fixed top-0 left-0 right-0 z-1000">
-  <div className="navbar-start">
+<div className='w-11/12 mx-auto flex justify-between items-center'>
+    <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
@@ -24,7 +25,7 @@ function Navbar() {
       </ul>
     </div>
 <div className='flex item center gap-10'>
-      <a className="btn btn-ghost text-xl text-blue-700">SHEBA 360 BD</a>
+      <a className=" text-xl text-blue-700">SHEBA 360 BD</a>
       <div className="navbar-center hidden lg:flex">
     <ul className="flex gap-6">
       {link}
@@ -34,8 +35,9 @@ function Navbar() {
   </div>
   
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    
   </div>
+</div>
 </div>
    </>
   )
