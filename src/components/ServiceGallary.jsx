@@ -61,7 +61,7 @@ const ServiceCard = ({ service, onClick }) => (
             {service.rating} ({service.reviewCount})
           </p>
         </div>
-        <button className="btn btn-primary btn-sm">Book Now</button>
+        <button className="btn btn-primary btn-sm book-btn">Book Now</button>
       </div>
     </div>
   </div>
@@ -81,7 +81,7 @@ const ServiceDetailsModal = ({ service, onClose, handleAddToCart }) => {
 
   return (
     <dialog ref={modalRef} className="modal" onClose={onClose}>
-      <div className="modal-box w-11/12 max-w-3xl p-0 overflow-hidden rounded-2xl">
+      <div className="modal-box w-11/12 max-w-3xl p-0 overflow-hidden rounded-2xl service-card">
         <button
           onClick={() => {
             modalRef.current.close();
@@ -127,7 +127,7 @@ const ServiceDetailsModal = ({ service, onClose, handleAddToCart }) => {
             <div className="modal-action">
               <button
                 onClick={() => handleAddToCart(service)}
-                className="btn btn-secondary font-bold w-full"
+                className="book-btn btn btn-secondary font-bold w-full"
               >
                 Book This Service Now
               </button>

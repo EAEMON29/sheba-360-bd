@@ -188,7 +188,7 @@ const Footer = () => {
                         &copy; {new Date().getFullYear()} Sheba 360 BD. All Rights Reserved.
                     </p>
                     <p className="mt-1">
-                        Made with <span className="text-red-500">♥</span> and Expertise.
+                        Made By EA EMON
                     </p>
                 </div>
             </div>
