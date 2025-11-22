@@ -1,2 +1,23 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.mySwiper {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.slide-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* ---- Pagination Dot Styling ---- */
+
+
+.swiper-pagination-bullet {
+  background-color: #ccc;
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+}
