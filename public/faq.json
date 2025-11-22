@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "How do I book a service?", "answer": "You can book directly from our website or app by selecting the service and time." },
+  { "id": 2, "question": "Are your professionals trusted?", "answer": "Yes, all providers are police verified and trained." },
+  { "id": 3, "question": "Do I have to pay in advance?", "answer": "No, you can pay after the service via Cash or Online." },
+  { "id": 4, "question": "What is the warranty policy?", "answer": "We offer a 7-day service warranty on most services." },
+  { "id": 5, "question": "Can I reschedule my booking?", "answer": "Yes, you can reschedule via the app up to 2 hours before the time." },
+  { "id": 6, "question": "Do you provide parts?", "answer": "We can procure parts for you, but the cost is extra." },
+  { "id": 7, "question": "Is there a visiting charge?", "answer": "Yes, if you decide not to take the service after diagnosis, a small visiting fee applies." },
+  { "id": 8, "question": "Do you serve outside Dhaka?", "answer": "Currently, we mainly serve Dhaka, but we are expanding to Chittagong soon." },
+  { "id": 9, "question": "How do I cancel a booking?", "answer": "Go to 'My Orders' and select cancel. Cancellation is free up to 3 hours before." },
+  { "id": 10, "question": "Are cleaning materials included?", "answer": "For deep cleaning, yes. For regular cleaning, you may need to provide them." },
+  { "id": 11, "question": "How long does AC servicing take?", "answer": "Usually 45-60 minutes per unit." },
+  { "id": 12, "question": "Can I hire a cleaner for the whole month?", "answer": "Yes, we have subscription packages for monthly services." },
+  { "id": 13, "question": "What if something is damaged?", "answer": "We have insurance coverage for damages caused by our professionals." },
+  { "id": 14, "question": "Do you do express delivery?", "answer": "Yes, we have 'Emergency Service' which reaches within 2 hours." },
+  { "id": 15, "question": "Can I pick a specific professional?", "answer": "Yes, if they are available, you can re-book the same person." },
+  { "id": 16, "question": "Is online payment safe?", "answer": "Yes, we use SSL encrypted gateways for 100% security." },
+  { "id": 17, "question": "Do you offer pest control for offices?", "answer": "Yes, we have corporate packages for offices." },
+  { "id": 18, "question": "Can I track the professional?", "answer": "Yes, our app has real-time tracking." },
+  { "id": 19, "question": "What are your support hours?", "answer": "Our hotline is open 24/7." },
+  { "id": 20, "question": "Do you provide invoices?", "answer": "Yes, you will receive a digital invoice via email immediately." }
+]
