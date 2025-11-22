@@ -1,30 +1,41 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        navy: "#0A1A2F",
+        navyLight: "#112240",
+        primary: "#4F8BFF",
+        secondary: "#64FFDA",
+        light: "#E6EEF8",
+      }
+    }
   },
-  // --- daisyUI Configuration ---
-  // If you haven't installed daisyui, you must do it: npm install -D daisyui
-  plugins: [require("daisyui")], 
-  
+
+  plugins: [
+    require("daisyui")
+  ],
+
   daisyui: {
     themes: [
       {
-        sheba360: { // <-- আমাদের কাস্টম থিমের নাম
-          
-          "primary": "#0A2E5D",   // Navy Blue (Main Brand Color)
-          "secondary": "#FFC107", // Golden Yellow (CTA Color)
-          "accent": "#FFC107",    // Accent হিসেবেও এটি রাখলাম
-          "neutral": "#333333",   // Dark Gray (Text Color)
-          "base-100": "#FFFFFF",   // Main Background (White)
-          "base-content": "#333333", // Text Color on White Background
-
-          // Note: Tailwind uses these colors for all -primary, bg-secondary, etc.
-        },
-      },
-    ],
-  },
+        shebaTheme: {
+          "primary": "#4F8BFF",
+          "secondary": "#64FFDA",
+          "accent": "#112240",
+          "neutral": "#0A1A2F",
+          "base-100": "#0A1A2F",
+          "info": "#4F8BFF",
+          "success": "#64FFDA",
+          "warning": "#F4D03F",
+          "error": "#E74C3C",
+        }
+      }
+    ]
+  }
 }

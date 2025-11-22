@@ -16,7 +16,7 @@ function Home()
 <main> 
   <ServiceGallary /> 
 <HowItWorks /> 
-<MeetProfessionals /> 
+<MeetProfessionals/>
 <OurServiceAreas /> 
 <FAQSection /> 
 <Testimonials /> 

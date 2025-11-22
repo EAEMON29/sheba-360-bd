@@ -1,28 +1,65 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @plugin "daisyui";
 /* @import 'swiper/css';
 @import 'swiper/css/pagination';
 @import 'swiper/css/navigation'; */
 /* Global Theme Variables */
-:root {
-  --primary: #2952E3;
-  --primary-light: #5EA8F5;
 
-  --accent: #040d42;
-
-  --success: #4CAF50;
-  --warning: #FFC107;
-
-  --offer-red: #E63946;
-  --tag-purple: #6C63FF;
-
-  --text-primary: #1B1F3B;
-  --text-secondary: #4A4E69;
-  --text-muted: #9CA3AF;
-
-  --bg-card: #FFFFFF;
-  --bg-section: #F7F9FC;
+body {
+  background: #0A1A2F !important;
+  color: #E6EEF8 !important;
+  font-family: 'Inter', sans-serif;
 }
+
+
+:root {
+  --bg-main: #0A1A2F;
+  --bg-section: #112240;
+  --bg-card: #1B2B44;
+
+  --accent: #00A8E8;
+  --accent-soft: #4DC3F7;
+
+  --text-primary: #E6EEF8;
+  --text-secondary: #A8B3C7;
+
+  --btn-primary: #0077B6;
+  --btn-primary-hover: #0096C7;
+
+  --border-light: rgba(255,255,255,0.15);
+
+
+
+}
+
+/* Marquee Animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40%);
+  }
+}
+
+/* Auto sliding */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+
+/* Hover to pause */
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+
+
+
 .service-card {
   background: var(--bg-card);
 }
@@ -32,6 +69,8 @@
   background: var(--accent);
   color: white;
 }
+
+
 
 
 
@@ -53,7 +92,7 @@
 
 
 .swiper-pagination-bullet {
-  background-color: #ccc;
+  background-color: #ffffff;
   opacity: 1;
   width: 12px;
   height: 12px;
