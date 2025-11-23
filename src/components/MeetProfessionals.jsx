@@ -6,7 +6,7 @@ const FALLBACK_PROFESSIONALS = [
     { id: "pro-01", name: "Kamal Ahmed", specialty: "AC Technician", rating: 4.9, jobs: 520, image: "https://plus.unsplash.com/premium_photo-1689977927774-401b12d137d6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", social: { facebook: "#", instagram: "#", twitter: "#" }},
     { id: "pro-02", name: "Hasan ALi", specialty: "Cleaner", rating: 4.8, jobs: 350, image: "https://plus.unsplash.com/premium_photo-1689977871600-e755257fb5f8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", social: { facebook: "#", instagram: "#", twitter: null }},
     { id: "pro-03", name: "Jamil Hasan", specialty: "Plumber", rating: 4.9, jobs: 710, image: "https://plus.unsplash.com/premium_photo-1689977807477-a579eda91fa2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", social: { facebook: "#", instagram: "#", twitter: "#" }},
-    { id: "pro-04", name: "Sohail Rana", specialty: "Electrician", rating: 4.7, jobs: 420, image: "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", social: { facebook: "#", instagram: "#", twitter: null }},
+    { id: "pro-04", name: "Sohail Rana", specialty: "Electrician", rating: 4.7, jobs: 420, image: "https://plus.unsplash.com/premium_photo-1682094414798-4f6726661902?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", social: { facebook: "#", instagram: "#", twitter: null }},
 ];
 
 // Animated Job Counter
