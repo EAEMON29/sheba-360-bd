@@ -67,7 +67,7 @@ const OurServiceAreas = () => {
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                         />
-                        <button type="submit" className="btn btn-secondary btn-lg text-primary rounded-xl px-8 font-bold shadow-md hover:opacity-90">
+                        <button type="submit" className="btn btn-lg text-primary rounded-xl px-8 font-bold shadow-md hover:opacity-90">
                             <Search size={24} />
                             <span className="hidden sm:inline">Check</span>
                         </button>

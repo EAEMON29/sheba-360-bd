@@ -41,13 +41,13 @@ body {
 :root {
   --bg-main: #0A1A2F;
   --bg-section: #112240;
-  --bg-card: #1B2B44;
+  --bg-card: #587aaf;
 
   --accent: #00A8E8;
   --accent-soft: #4DC3F7;
 
   --text-primary: #E6EEF8;
-  --text-secondary: #A8B3C7;
+  --text-two: #000000;
 
   --btn-primary: #0077B6;
   --btn-primary-hover: #0096C7;
@@ -120,10 +120,8 @@ body {
 
 
 .swiper-pagination-bullet {
-  background-color: #ffffff;
-  opacity: 1;
-  width: 12px;
-  height: 12px;
+    color: #2b27ff;
+ 
 }
 
 

@@ -171,8 +171,8 @@ const ImageCarousel = () => {
                 <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
-                    className={`h-3 rounded-full transition-all duration-300 shadow-lg ${
-                        currentIndex === index ? 'w-10 bg-secondary' : 'w-3 bg-white/50 hover:bg-white'
+                    className={`h-3  rounded-full transition-all duration-300 shadow-lg bg-blue-400  ${
+                        currentIndex === index ? 'w-10 ' :  'w-3 bg-white/50 hover:bg-white'
                     }`}
                     aria-label={`Go to slide ${index + 1}`}
                 />

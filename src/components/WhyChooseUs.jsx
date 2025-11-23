@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
                 
                 {/* Optional CTA */}
                  <div className="text-center mt-12">
-                    <button className="btn btn-secondary btn-lg text-primary font-bold shadow-lg hover:opacity-90">
+                    <button className="btn  btn-lg text-primary font-bold shadow-lg hover:opacity-90">
                         Book Your Trusted Service Today <ChevronRight size={20} />
                     </button>
                 </div>

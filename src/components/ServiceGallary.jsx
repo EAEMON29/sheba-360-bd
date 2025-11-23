@@ -30,7 +30,7 @@ const CategoriesNavbar = ({ categories, activeCategory, onSelectCategory }) => {
 // ----------------------------------------------------------------
 const ServiceCard = ({ service, onClick }) => (
   <div
-    className="card bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-1 cursor-pointer transition-all duration-300 border border-gray-100 group"
+    className="card  shadow-xl hover:shadow-2xl hover:-translate-y-1 cursor-pointer transition-all duration-300 border border-gray-100 group bg-base-100"
     onClick={() => onClick(service)}
   >
     <figure className="relative h-48 overflow-hidden">
@@ -40,28 +40,28 @@ const ServiceCard = ({ service, onClick }) => (
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
       />
       {service.discount && (
-        <div className="absolute top-3 right-3 badge badge-secondary font-bold shadow-md">
+        <div className="absolute top-3 right-3 badge bg-blue-400 font-bold shadow-md text-white">
           {service.discount}
         </div>
       )}
     </figure>
 
     <div className="card-body p-6">
-      <h3 className="font-bold text-lg text-primary line-clamp-1">
+      <h3 className="font-bold text-lg text-black line-clamp-1">
         {service.title}
       </h3>
 
-      <div className="badge badge-outline text-xs">{service.category}</div>
+      <div className="badge badge-outline text-xs text-blue-500">{service.category}</div>
 
       <div className="flex justify-between mt-4">
         <div>
-          <p className="text-2xl font-bold text-secondary">৳ {service.price}</p>
+          <p className="text-2xl font-bold text-two text-indigo-400">৳ {service.price}</p> 
           <p className="text-xs text-gray-500 flex items-center gap-1">
             <Star size={12} className="text-yellow-500 fill-yellow-500" />{" "}
             {service.rating} ({service.reviewCount})
           </p>
         </div>
-        <button className="btn btn-primary btn-sm book-btn">Book Now</button>
+        <button className="btn btn-primary btn-sm book-btn ">Book Now</button>
       </div>
     </div>
   </div>
@@ -80,21 +80,21 @@ const ServiceDetailsModal = ({ service, onClose, handleAddToCart }) => {
   if (!service) return null;
 
   return (
-    <dialog ref={modalRef} className="modal" onClose={onClose}>
-      <div className="modal-box w-11/12 max-w-3xl p-0 overflow-hidden rounded-2xl service-card">
+    <dialog ref={modalRef} className="modal text-blue-900" onClose={onClose}>
+      <div className="modal-box w-11/12 max-w-3xl p-0 overflow-hidden rounded-2xl  ">
         <button
           onClick={() => {
             modalRef.current.close();
             onClose();
           }}
-          className="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 z-10 text-white"
+          className="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 z-10 text-blue-900"
         >
           <X size={20} />
         </button>
 
         <div className="flex flex-col lg:flex-row">
           {/* Left Image */}
-          <div className="lg:w-1/2 relative">
+          <div className="lg:w-1/2 relative ">
             <img src={service.image} alt={service.title} className="w-full" />
           </div>
 
@@ -105,20 +105,20 @@ const ServiceDetailsModal = ({ service, onClose, handleAddToCart }) => {
               "{service.shortDescription}"
             </p>
 
-            <div className="divider">Details</div>
+            <div className="divider text-blue-900">Details</div>
 
-            <p className="text-sm flex items-center gap-2 text-primary font-semibold">
+            <p className="text-sm flex items-center gap-2  font-semibold text-blue-900">
               <Clock size={16} /> Duration: {service.duration}
             </p>
 
-            <p className="text-sm flex items-center gap-2 text-primary font-semibold">
+            <p className="text-sm flex items-center gap-2  font-semibold text-blue-900">
               <Tag size={16} /> Discount: {service.discount || "No offer"}
             </p>
 
-            <h4 className="font-bold text-sm text-primary mt-3">
+            <h4 className="font-bold text-sm  mt-3 text-blue-900">
               Features:
             </h4>
-            <ul className="list-disc ml-5 text-sm">
+            <ul className="list-disc ml-5 text-sm text-blue-900">
               {service.features?.map((f, i) => (
                 <li key={i}>{f}</li>
               ))}
@@ -127,7 +127,7 @@ const ServiceDetailsModal = ({ service, onClose, handleAddToCart }) => {
             <div className="modal-action">
               <button
                 onClick={() => handleAddToCart(service)}
-                className="book-btn btn btn-secondary font-bold w-full"
+                className="book-btn btn  font-bold w-full"
               >
                 Book This Service Now
               </button>
@@ -202,7 +202,7 @@ export default function ServiceGallery() {
   return (
     <section className="bg-base-100 py-12">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-primary text-center mb-10">
+        <h2 className="text-3xl font-bold text-blue-900 text-center mb-10">
           Our Popular Services
         </h2>
 
@@ -212,7 +212,7 @@ export default function ServiceGallery() {
           onSelectCategory={handleCategoryClick}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
           {filteredServices.map((service) => (
             <ServiceCard key={service.id} service={service} onClick={handleCardClick} />
           ))}
