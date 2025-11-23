@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext.jsx";
 
 const Navbar = ({ searchText, setSearchText }) => {
@@ -12,14 +12,14 @@ const Navbar = ({ searchText, setSearchText }) => {
   );
 
   return (
-    <nav className="shadow-md bg-black/40 backdrop-blur-md text-white fixed top-0 left-0 right-0 z-1000">
+    <nav className="shadow-md bg-black/40 backdrop-blur-md text-white fixed top-0 left-0 right-0 z-50">
       <div className="w-11/12 mx-auto flex justify-between items-center py-6">
 
         {/* ---------- LEFT LOGO + MOBILE MENU ---------- */}
         <div className="flex items-center gap-4">
           {/* Mobile menu button */}
           <button
-            className="lg:hidden  p-1"
+            className="lg:hidden p-1"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <svg
@@ -39,23 +39,32 @@ const Navbar = ({ searchText, setSearchText }) => {
           </button>
 
           {/* Logo */}
-          <Link className="fruktur-regular text-2xl ">
+          <Link to="/" className="fruktur-regular text-2xl text-[#1D4ED8]">
             SHEBA 360 BD
           </Link>
         </div>
 
         {/* ---------- DESKTOP MENU ---------- */}
         <ul className="hidden lg:flex gap-8 text-sm font-medium tracking-wide">
-          <li className="hover:text-blue-400 cursor-pointer">HOME</li>
-          <li className="hover:text-blue-400 cursor-pointer">MENU</li>
-          <li className="hover:text-blue-400 cursor-pointer">ABOUT</li>
-          <li className="hover:text-blue-400 cursor-pointer">CONTACT</li>
+          <NavLink to="/" className="hover:text-blue-400 duration-300">
+            HOME
+          </NavLink>
+
+          <NavLink to="/menu" className="hover:text-blue-400 duration-300">
+            MENU
+          </NavLink>
+
+          <NavLink to="/about" className="hover:text-blue-400 duration-300">
+            ABOUT
+          </NavLink>
+
+          <NavLink to="/contact" className="hover:text-blue-400 duration-300">
+            CONTACT
+          </NavLink>
         </ul>
 
         {/* ---------- RIGHT FEATURES ---------- */}
         <div className="flex items-center gap-4">
-
-         
 
           {/* Cart Button */}
           <Link
@@ -79,7 +88,7 @@ const Navbar = ({ searchText, setSearchText }) => {
 
             {/* Cart Count */}
             {cartCount > 0 && (
-              <span className="absolute -top-1 -right-1  bg-blue-950 text-white text-xs px-1.5 rounded-full">
+              <span className="absolute -top-1 -right-1 bg-blue-950 text-white text-xs px-1.5 rounded-full">
                 {cartCount}
               </span>
             )}
@@ -97,17 +106,28 @@ const Navbar = ({ searchText, setSearchText }) => {
 
       {/* ---------- MOBILE DROPDOWN MENU ---------- */}
       {menuOpen && (
-        <ul className="lg:hidden bg-black/70 backdrop-blur-md text-white w-full px-6 pb-4 animate-fadeDown">
-          <li className="py-2 border-b border-white/10">HOME</li>
-          <li className="py-2 border-b border-white/10">MENU</li>
-          <li className="py-2 border-b border-white/10">ABOUT</li>
-          <li className="py-2 border-b border-white/10">CONTACT</li>
+        <ul className="lg:hidden bg-black/70 backdrop-blur-md text-white w-full px-6 pb-4 animate-fadeDown flex flex-col gap-3">
 
-          {/* Mobile search */}
-          
+          <NavLink to="/" className="py-2 border-b border-white/10">
+            HOME
+          </NavLink>
+
+          <NavLink to="/menu" className="py-2 border-b border-white/10">
+            MENU
+          </NavLink>
+
+          <NavLink to="/about" className="py-2 border-b border-white/10">
+            ABOUT
+          </NavLink>
+
+          <NavLink to="/contact" className="py-2 border-b border-white/10">
+            CONTACT
+          </NavLink>
+
+          {/* SignIn Mobile */}
           <Link
             to="/signin"
-            className="mt-3 block text-center w-full py-2  bg-blue-950 rounded-full hover:bg-blue-700 transition"
+            className="mt-3 block text-center w-full py-2 bg-blue-950 rounded-full hover:bg-blue-700 transition"
           >
             Sign In / Sign Up
           </Link>

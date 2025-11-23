@@ -40,7 +40,7 @@ const ServiceCard = ({ service, onClick }) => (
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
       />
       {service.discount && (
-        <div className="absolute top-3 right-3 badge bg-blue-400 font-bold shadow-md text-white">
+        <div className="absolute top-3 right-3 badge bg-indigo-400 font-bold shadow-md text-white">
           {service.discount}
         </div>
       )}
@@ -51,7 +51,7 @@ const ServiceCard = ({ service, onClick }) => (
         {service.title}
       </h3>
 
-      <div className="badge badge-outline text-xs text-blue-500">{service.category}</div>
+      <div className="badge badge-outline text-xs text-indigo-600">{service.category}</div>
 
       <div className="flex justify-between mt-4">
         <div>
@@ -61,7 +61,7 @@ const ServiceCard = ({ service, onClick }) => (
             {service.rating} ({service.reviewCount})
           </p>
         </div>
-        <button className="btn btn-primary btn-sm book-btn ">Book Now</button>
+        <button className="btn bg-indigo-600 text-white btn-sm  ">Book Now</button>
       </div>
     </div>
   </div>
@@ -127,7 +127,7 @@ const ServiceDetailsModal = ({ service, onClose, handleAddToCart }) => {
             <div className="modal-action">
               <button
                 onClick={() => handleAddToCart(service)}
-                className="book-btn btn  font-bold w-full"
+                className="bg-indigo-600 btn text-white font-bold w-full"
               >
                 Book This Service Now
               </button>

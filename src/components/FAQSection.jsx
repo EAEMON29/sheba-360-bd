@@ -66,7 +66,7 @@ const FAQSection = () => {
                                 {/* Question/Title */}
                                 <input type="checkbox" className="peer" /> 
                                 <div className="collapse-title text-xl font-bold text-primary peer-checked:bg-primary peer-checked:text-white transition duration-300 flex items-center gap-4">
-                                    <HelpCircle size={24} className="flex-shrink-0 text-secondary peer-checked:text-white transition duration-300" />
+                                    <HelpCircle size={24} className="flex-shrink-0 text-indigo-600 peer-checked:text-white transition duration-300" />
                                     {item.question}
                                 </div>
                                 
@@ -92,7 +92,7 @@ const FAQSection = () => {
                         </button>
                         <button 
                             onClick={handleCallUs} // FIX: Updated onClick to call
-                            className="btn btn-outline btn-secondary btn-lg text-primary font-bold hover:bg-secondary transition duration-300 flex-grow sm:flex-grow-0"
+                            className="btn btn-outline y btn-lg text-primary font-bold hover:bg-secondary transition duration-300 flex-grow sm:flex-grow-0"
                         >
                             <Phone size={20} /> Call Our Hotline
                         </button>

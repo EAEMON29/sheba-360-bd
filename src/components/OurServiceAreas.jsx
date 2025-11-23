@@ -90,7 +90,7 @@ const OurServiceAreas = () => {
                 {/* --- Area List Display --- */}
                 <div className="max-w-4xl mx-auto mt-16">
                     <h3 className="text-2xl font-bold text-primary mb-6 flex items-center justify-center gap-2">
-                        <MapPin size={24} className="text-secondary" /> Key Service Zones
+                        <MapPin size={24} className="" /> Key Service Zones
                     </h3>
                     
                     {/* Area Tags/Badges - FIX: rounded-full added */}
@@ -101,7 +101,7 @@ const OurServiceAreas = () => {
                             </div>
                         ))}
                         {areas.length > 20 && (
-                             <div className="badge badge-lg bg-secondary text-primary p-4 font-bold rounded-full">
+                             <div className="badge badge-lg bg-indigo-600 text-white p-4 font-bold rounded-full">
                                 + {areas.length - 20} More Areas
                             </div>
                         )}

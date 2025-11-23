@@ -67,22 +67,22 @@ const CartPage = () => {
 
                 <div className="flex-grow w-full">
                   <h2 className="text-lg font-bold text-gray-800">{item.title}</h2>
-                  <p className="text-gray-500 text-sm">{item.category}</p>
+                  <p className="text-indigo-500 text-sm">{item.category}</p>
 
                   {/* Quantity Controls */}
                   <div className="flex items-center space-x-4 mt-3">
                     <button
                       onClick={() => decreaseQty(item.id)}
-                      className="px-3 py-1 bg-gray-200 rounded"
+                      className="px-3 py-1 bg-indigo-600 rounded"
                     >
                       -
                     </button>
 
-                    <span className="font-bold">{item.quantity}</span>
+                    <span className="font-bold text-blue-400">{item.quantity}</span>
 
                     <button
                       onClick={() => increaseQty(item.id)}
-                      className="px-3 py-1 bg-gray-300 rounded"
+                      className="px-3 py-1 bg-indigo-600 rounded"
                     >
                       +
                     </button>
@@ -91,7 +91,7 @@ const CartPage = () => {
 
                 {/* Price and Remove */}
                 <div className="text-right w-full md:w-auto mt-4 md:mt-0">
-                  <p className="text-lg font-bold text-green-700">
+                  <p className="text-lg font-bold text-blue-400">
                     ৳{(item.price * item.quantity).toFixed(2)}
                   </p>
 
@@ -108,7 +108,7 @@ const CartPage = () => {
 
           {/* Right — Order Summary */}
           <div className="bg-white p-6 shadow rounded-lg h-fit sticky top-24">
-            <h2 className="text-xl font-bold mb-4">Order Summary</h2>
+            <h2 className="text-xl font-bold mb-4 text-indigo-400">Order Summary</h2>
 
             <div className="flex justify-between mb-3 text-gray-700">
               <span>Total Items</span>
@@ -117,7 +117,7 @@ const CartPage = () => {
 
             <div className="flex justify-between mb-3 text-gray-700">
               <span>Total Price</span>
-              <span className="font-bold text-green-700">৳{totalPrice.toFixed(2)}</span>
+              <span className="font-bold text-blue-400">৳{totalPrice.toFixed(2)}</span>
             </div>
 
             <button

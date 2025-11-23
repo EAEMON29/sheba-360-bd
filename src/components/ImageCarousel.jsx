@@ -4,182 +4,168 @@ import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
 const ImageCarousel = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0); // For custom carousel
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Search functionality
   const handleSearch = (e) => {
-      e.preventDefault();
-      if (searchQuery.trim()) {
-          console.log("Searching for service:", searchQuery);
-          // In a real app, this would redirect to the service listing page with the query
-          // window.location.href = `/services?search=${searchQuery}`;
-          alert(`🔍 Searching for: "${searchQuery}"... \n(This will redirect to the search results page in a real app)`);
-      }
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      alert(`Searching for: "${searchQuery}"`);
+    }
   };
 
-
-  // Placeholder data (Directly embedded)
   const slides = [
     { 
       id: 1, 
-      image: "https://images.unsplash.com/photo-1581578731117-104f2a412729?q=80&w=1200&auto=format&fit=crop", 
+      image: "https://images.unsplash.com/photo-1667983453881-4992fe86ab1b?q=80",
       title: "Your Home Needs, Our Experts",
       subtitle: "Verified professionals ready to help you today."
     },
     { 
       id: 2, 
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop", 
+      image: "https://plus.unsplash.com/premium_photo-1677234147504-458d296b0113?q=80",
       title: "Book Expert AC Repair & Service",
       subtitle: "Guaranteed fix or your money back."
     },
     { 
       id: 3, 
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200&auto=format&fit=crop", 
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80",
       title: "Quality Service, Anytime",
       subtitle: "Plumbing, Electrical, and more—all in one place."
     },
     { 
       id: 4, 
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop", 
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80",
       title: "Hassle-Free Home Shifting",
-      subtitle: "The easiest way to move your entire home safely."
+      subtitle: "Move your entire home safely."
     },
     { 
       id: 5, 
-      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1200&auto=format&fit=crop", 
+      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80",
       title: "Trusted Professionals, On Demand",
-      subtitle: "Your safety is our priority. Every professional is verified."
+      subtitle: "Your safety is our priority."
     },
   ];
 
-  // Custom Carousel Logic
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-        prevIndex === 0 ? slides.length - 1 : prevIndex - 1
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
     );
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
-        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+    setCurrentIndex((prevIndex) =>
+      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  // Autoplay functionality
   useEffect(() => {
-    const slideInterval = setInterval(() => {
-      nextSlide();
-    }, 5000); // Scrolls every 5 seconds
-    return () => clearInterval(slideInterval);
-  }, [currentIndex]); // Re-run effect when currentIndex changes
-
+    const interval = setInterval(() => nextSlide(), 5000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   return (
-    <div className="w-full h-[500px] md:h-[600px] lg:h-[700px] relative group overflow-hidden">
-        
-        {/* Main Image Container */}
-        {slides.map((slide, index) => (
-            <div
-                key={slide.id}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                    index === currentIndex ? 'opacity-100' : 'opacity-0'
-                }`}
+    <div className="relative w-full h-[500px] sm:h-[550px] md:h-[650px] lg:h-[750px] overflow-hidden group">
+
+      {/* Background Slides */}
+      {slides.map((slide, index) => (
+        <div
+          key={slide.id}
+          className={`absolute inset-0 transition-opacity duration-[1200ms] ease-linear 
+          ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-[8000ms] scale-110"
+            style={{ backgroundImage: `url(${slide.image})` }}
+          ></div>
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
+        </div>
+      ))}
+
+      {/* Content Area */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-4">
+
+        {/* Title */}
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight drop-shadow-md max-w-[90%] sm:max-w-2xl">
+          {slides[currentIndex].title}
+        </h1>
+
+        <p className="text-base sm:text-lg md:text-2xl text-gray-200 mb-8 drop-shadow-md max-w-[85%] sm:max-w-xl">
+          {slides[currentIndex].subtitle}
+        </p>
+
+        {/* Search Bar */}
+        <form
+          onSubmit={handleSearch}
+          className="w-full max-w-xl sm:max-w-2xl flex bg-white rounded-full shadow-xl overflow-hidden border border-white/30"
+        >
+          <div className="flex items-center px-4 w-full">
+            <Search className="text-gray-400 mr-3" />
+            <input
+              type="text"
+              placeholder="What service do you need?"
+              className="w-full py-3 sm:py-4 text-gray-700 text-base sm:text-lg outline-none bg-transparent"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="px-6 sm:px-10 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all"
+          >
+            Search
+          </button>
+        </form>
+
+        {/* Tags */}
+        <div className="mt-4 flex flex-wrap justify-center gap-2 text-white/80 text-xs sm:text-sm">
+          {["AC Repair", "Cleaning", "Plumbing", "Shifting"].map((tag) => (
+            <span
+              key={tag}
+              onClick={() => setSearchQuery(tag)}
+              className="px-3 py-1 bg-white/20 hover:bg-white/30 rounded-full cursor-pointer"
             >
-                <div 
-                    className="absolute inset-0 bg-cover bg-center transform transition-transform duration-[10000ms] scale-100 hover:scale-105"
-                    style={{ backgroundImage: `url(${slide.image})` }}
-                ></div>
-                {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70"></div>
-            </div>
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation - Left */}
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 left-3 sm:left-5 -translate-y-1/2 bg-white/10 
+        hover:bg-blue-600 p-3 sm:p-4 rounded-full text-white opacity-0 
+        group-hover:opacity-100 transition-all z-30"
+      >
+        <ChevronLeft size={28} />
+      </button>
+
+      {/* Navigation - Right */}
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-3 sm:right-5 -translate-y-1/2 bg-white/10 
+        hover:bg-blue-600 p-3 sm:p-4 rounded-full text-white opacity-0 
+        group-hover:opacity-100 transition-all z-30"
+      >
+        <ChevronRight size={28} />
+      </button>
+
+      {/* Indicators */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`h-3 rounded-full cursor-pointer transition-all 
+            ${currentIndex === index ? 'w-10 bg-blue-400' : 'w-3 bg-white/50'}`}
+          />
         ))}
-
-        {/* --- Content & Search Bar Container --- */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-20">
-            
-            {/* Heading & Subtitle with Animation */}
-            <div className="max-w-4xl mx-auto mb-10 animate-fadeInUp transition-all duration-500">
-                <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-xl leading-tight tracking-tight">
-                    {slides[currentIndex].title}
-                </h1>
-                <p className="text-lg md:text-2xl text-gray-200 font-medium drop-shadow-md">
-                    {slides[currentIndex].subtitle}
-                </p>
-            </div>
-
-            {/* --- ENHANCED SEARCH BAR --- */}
-            <div className="w-full max-w-3xl">
-                <form 
-                    onSubmit={handleSearch} 
-                    className="flex items-center bg-white rounded-full shadow-2xl overflow-hidden p-1.5 transform transition-all hover:scale-[1.01] border-4 border-white/20 backdrop-blur-sm"
-                >
-                    {/* Input Field */}
-                    <div className="flex-grow flex items-center pl-6 pr-2">
-                        <Search size={24} className="text-gray-400 mr-3" />
-                        <input
-                            type="text"
-                            placeholder="What service do you need? (e.g. AC Repair, Cleaning)"
-                            className="w-full py-4 text-gray-700 text-lg placeholder-gray-400 outline-none bg-transparent"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                        />
-                    </div>
-                    
-                    {/* Search Button */}
-                    <button 
-                        type="submit" 
-                        className="btn btn-lg  font-bold rounded-full px-8 md:px-10 shadow-md hover:shadow-lg hover:bg-blue-800 transition-all duration-300 border-none"
-                    >
-                        Search
-                    </button>
-                </form>
-                
-                {/* Popular Search Tags */}
-                <div className="mt-4 flex flex-wrap justify-center gap-2 text-sm text-white/80 font-medium">
-                    <span>Popular:</span>
-                    {['AC Repair', 'Home Cleaning', 'Plumbing', 'Shifting'].map((tag) => (
-                        <span 
-                            key={tag} 
-                            className="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full cursor-pointer transition backdrop-blur-sm border border-white/10"
-                            onClick={() => setSearchQuery(tag)}
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                </div>
-            </div>
-
-        </div>
-        
-        {/* Navigation Arrows (Visible on Hover) */}
-        <button 
-            onClick={prevSlide}
-            className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/10 hover:bg-primary text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 backdrop-blur-md border border-white/20"
-        >
-            <ChevronLeft size={32} />
-        </button>
-        <button 
-            onClick={nextSlide}
-            className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/10 hover:bg-primary text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 backdrop-blur-md border border-white/20"
-        >
-            <ChevronRight size={32} />
-        </button>
-        
-        {/* Indicator Dots */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
-            {slides.map((_, index) => (
-                <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`h-3  rounded-full transition-all duration-300 shadow-lg bg-blue-400  ${
-                        currentIndex === index ? 'w-10 ' :  'w-3 bg-white/50 hover:bg-white'
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                />
-            ))}
-        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default ImageCarousel;
