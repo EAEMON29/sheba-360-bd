@@ -3,10 +3,10 @@ import { UserCheck, Star, ChevronRight, Facebook, Instagram, Twitter } from 'luc
 
 // --- Hardcoded Fallback Data ---
 const FALLBACK_PROFESSIONALS = [
-    { id: "pro-01", name: "Kamal Ahmed", specialty: "AC Technician", rating: 4.9, jobs: 520, image: "https://randomuser.me/api/portraits/men/1.jpg", social: { facebook: "#", instagram: "#", twitter: "#" }},
-    { id: "pro-02", name: "Rubina Akter", specialty: "Cleaner", rating: 4.8, jobs: 350, image: "https://randomuser.me/api/portraits/women/2.jpg", social: { facebook: "#", instagram: "#", twitter: null }},
-    { id: "pro-03", name: "Jamil Hasan", specialty: "Plumber", rating: 4.9, jobs: 710, image: "https://randomuser.me/api/portraits/men/3.jpg", social: { facebook: "#", instagram: "#", twitter: "#" }},
-    { id: "pro-04", name: "Sohail Rana", specialty: "Electrician", rating: 4.7, jobs: 420, image: "https://randomuser.me/api/portraits/men/4.jpg", social: { facebook: "#", instagram: "#", twitter: null }},
+    { id: "pro-01", name: "Kamal Ahmed", specialty: "AC Technician", rating: 4.9, jobs: 520, image: "https://plus.unsplash.com/premium_photo-1689977927774-401b12d137d6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", social: { facebook: "#", instagram: "#", twitter: "#" }},
+    { id: "pro-02", name: "Hasan ALi", specialty: "Cleaner", rating: 4.8, jobs: 350, image: "https://plus.unsplash.com/premium_photo-1689977871600-e755257fb5f8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", social: { facebook: "#", instagram: "#", twitter: null }},
+    { id: "pro-03", name: "Jamil Hasan", specialty: "Plumber", rating: 4.9, jobs: 710, image: "https://plus.unsplash.com/premium_photo-1689977807477-a579eda91fa2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", social: { facebook: "#", instagram: "#", twitter: "#" }},
+    { id: "pro-04", name: "Sohail Rana", specialty: "Electrician", rating: 4.7, jobs: 420, image: "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", social: { facebook: "#", instagram: "#", twitter: null }},
 ];
 
 // Animated Job Counter
@@ -43,7 +43,7 @@ const ProfessionalCard = ({ pro }) => {
     return (
         <div
             key={pro.id}
-            className="card bg-base-100 shadow-xl border-t-8 border-secondary rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl 
+            className=" bg-base-100 shadow-xl border-t-6 border-indigo-500 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl 
                        flex-shrink-0 w-full sm:w-[250px] md:w-[270px] lg:w-[300px] snap-center"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
@@ -102,7 +102,7 @@ const ProfessionalCard = ({ pro }) => {
 
             <div className="card-body px-4 text-center">
                 <h3 className="text-lg font-semibold text-primary">{pro.name}</h3>
-                <p className="text-secondary">{pro.specialty}</p>
+                <p className="text-indigo-600">{pro.specialty}</p>
             </div>
         </div>
     );

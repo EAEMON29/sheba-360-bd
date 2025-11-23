@@ -44,15 +44,15 @@ const HowItWorks = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {steps.map((step, index) => (
-                            <div key={step.id} className="relative z-10 text-center flex flex-col items-center p-6 bg-white rounded-xl shadow-lg transition-transform duration-500 hover:scale-[1.03] border-t-4 border-secondary">
+                            <div key={step.id} className="relative z-10 text-center flex flex-col items-center p-6 bg-white rounded-xl shadow-lg transition-transform duration-500 hover:scale-[1.03] border-t-4 border-indigo-600">
                                 
                                 {/* Step Icon (Navy Blue Circle with Golden Yellow icon) */}
-                                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-primary text-secondary mb-4 shadow-xl">
+                                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-primary mb-4 shadow-xl">
                                     <step.icon size={30} strokeWidth={2.5} />
                                 </div>
                                 
                                 {/* Step Number (Circular badge, for visual clarity) */}
-                                <div className="absolute top-0 right-0 transform -translate-y-1/2 badge badge-secondary font-bold text-primary text-sm">
+                                <div className="absolute top-0 right-0 transform -translate-y-1/2 badge bg-indigo-600 font-bold text-white text-sm">
                                     Step {step.id}
                                 </div>
 
