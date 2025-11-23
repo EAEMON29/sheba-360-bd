@@ -39,7 +39,7 @@ const Navbar = ({ searchText, setSearchText }) => {
           </button>
 
           {/* Logo */}
-          <Link className="text-xl text-blue-950 font-bold">
+          <Link className="fruktur-regular text-2xl ">
             SHEBA 360 BD
           </Link>
         </div>
@@ -55,33 +55,7 @@ const Navbar = ({ searchText, setSearchText }) => {
         {/* ---------- RIGHT FEATURES ---------- */}
         <div className="flex items-center gap-4">
 
-          {/* Search */}
-          <label className="hidden md:flex items-center gap-2 bg-white/10 rounded-full px-3 py-1.5 border border-transparent focus-within:border-blue-400 transition">
-            <svg
-              className="h-[1em] opacity-70"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <g
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                strokeWidth="2.5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.3-4.3"></path>
-              </g>
-            </svg>
-
-            <input
-              type="search"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-              placeholder="Search"
-              className="bg-transparent outline-none text-sm text-white placeholder-white/60 w-32 md:w-40"
-            />
-          </label>
+         
 
           {/* Cart Button */}
           <Link
@@ -130,33 +104,7 @@ const Navbar = ({ searchText, setSearchText }) => {
           <li className="py-2 border-b border-white/10">CONTACT</li>
 
           {/* Mobile search */}
-          <label className="flex mt-3 items-center gap-2 bg-white/10 rounded-full px-3 py-2 border border-transparent focus-within:border-blue-400 transition">
-            <svg
-              className="h-[1em] opacity-70"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <g
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                strokeWidth="2.5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.3-4.3"></path>
-              </g>
-            </svg>
-
-            <input
-              type="search"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-              placeholder="Search"
-              className="bg-transparent outline-none text-sm text-white placeholder-white/60 w-full"
-            />
-          </label>
-
+          
           <Link
             to="/signin"
             className="mt-3 block text-center w-full py-2  bg-blue-950 rounded-full hover:bg-blue-700 transition"

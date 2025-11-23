@@ -1,18 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Fruktur:ital@0;1&display=swap');
 @import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @plugin "daisyui";
+
+
 /* @import 'swiper/css';
 @import 'swiper/css/pagination';
 @import 'swiper/css/navigation'; */
 /* Global Theme Variables */
+@theme {
+    --Fruktur:"Fruktur", system-ui;
+    
+}
 
 body {
   background: #0A1A2F !important;
   color: #E6EEF8 !important;
   font-family: 'Inter', sans-serif;
 }
+
+.fruktur-regular {
+  font-family: "Fruktur", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fruktur-regular-italic {
+  font-family: "Fruktur", system-ui;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+
+
 
 
 :root {
@@ -34,6 +57,11 @@ body {
 
 
 }
+
+
+
+
+
 
 /* Marquee Animation */
 @keyframes marquee-scroll {
